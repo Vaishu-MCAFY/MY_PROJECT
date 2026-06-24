@@ -1,0 +1,121 @@
+<html>
+<head>
+    <title>Register - Smart Study Platform</title>
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.navbar {
+    background: #007BFF;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar h2 {
+    margin: 0;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+.form-container {
+    width: 350px;
+    margin: 60px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-container label {
+    font-weight: bold;
+}
+
+.form-container input,
+.form-container select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.form-container button {
+    width: 100%;
+    padding: 12px;
+    background: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background: #0056b3;
+}
+
+.form-container p {
+    text-align: center;
+}
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar">
+    <h2>Smart Study Platform</h2>
+    <div>
+        <a href="/home">Home</a>
+        <a href="/login">Login</a>
+    </div>
+</nav>
+
+<div class="form-container">
+    <h2>Create Account</h2>
+
+    <form action="/register" method="POST">
+        <label>Full Name</label>
+        <input type="text" name="name" placeholder="Enter your name" required>
+
+        <label>Email</label>
+        <input type="email" name="email" placeholder="Enter your email" required>
+
+        <label>Password</label>
+        <input type="password" name="password" placeholder="Create password" required>
+
+        <label>Role</label>
+        <select name="role" required>
+            <option value="">Select Role</option>
+            <option value="student">Student</option>
+            <option value="teacher">Teacher</option>
+        </select>
+
+        <button type="submit">Register</button>
+
+    </form>
+
+    <p>Already have an account? <a href="/login">Login here</a></p>
+
+</div>
+
+</body>
+</html>

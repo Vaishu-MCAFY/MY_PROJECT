@@ -1,0 +1,91 @@
+<html>
+
+<head>
+
+    <title>Upload Material</title>
+
+<style>
+
+body{
+    font-family:Arial;
+    background:#f4f4f4;
+}
+
+.form-box{
+    width:450px;
+    background:white;
+    padding:30px;
+    margin:40px auto;
+    border-radius:10px;
+}
+
+input,
+textarea,
+select{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    background:#007BFF;
+    color:white;
+    border:none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<form class="form-box"
+      method="POST"
+      enctype="multipart/form-data">
+
+    <h1>Upload Study Material</h1>
+
+    <input type="text"
+           name="name"
+           placeholder="Enter name"
+           required>
+
+     <input type="text"
+           name="course"
+           placeholder="Enter Course"
+           required> 
+
+    <input type="text"
+           name="subject"
+           placeholder="Enter Subject"
+           required>
+     <input type="text"
+           name="year"
+           placeholder="Enter year"
+           required>
+    <select name="semester">
+        <option>Semester 1</option>
+        <option>Semester 2</option>
+        <option>Semester 3</option>
+        <option>Semester 4</option>
+        <option>Semester 5</option>
+        <option>Semester 6</option>
+
+    </select>
+
+    <input type="file"
+           name="file"
+           required>
+
+    <button type="submit">
+
+        Upload Material
+
+    </button>
+
+</form>
+
+</body>
+</html>
