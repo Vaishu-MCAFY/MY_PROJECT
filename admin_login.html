@@ -1,0 +1,107 @@
+<html>
+<head>
+    <title>Admin Login</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#f4f4f4;
+}
+
+.login-box{
+    width:400px;
+    background:white;
+    padding:40px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+.login-box h1{
+    text-align:center;
+    margin-bottom:30px;
+    color:#007BFF;
+}
+
+.input-box{
+    margin-bottom:20px;
+}
+
+.input-box input{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:5px;
+    font-size:16px;
+}
+
+.login-btn{
+    width:100%;
+    padding:12px;
+    background:#007BFF;
+    color:white;
+    border:none;
+    border-radius:5px;
+    font-size:18px;
+    cursor:pointer;
+}
+
+.login-btn:hover{
+    background:#0056b3;
+}
+
+p{
+    text-align:center;
+    margin-top:15px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<form method="POST"
+      class="login-box">
+
+    <h1>Admin Login</h1>
+
+    <div class="input-box">
+
+        <input type="email"
+               name="email"
+               placeholder="Enter Admin Email"
+               required>
+
+    </div>
+
+    <div class="input-box">
+
+        <input type="password"
+               name="password"
+               placeholder="Enter Password"
+               required>
+
+    </div>
+
+    <button type="submit"
+            class="login-btn">
+
+        Login
+
+    </button>
+
+</form>
+
+</body>
+</html>
