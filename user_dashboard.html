@@ -1,0 +1,227 @@
+<html>
+<head>
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            background:#f4f6f9;
+            display:flex;
+        }
+        .sidebar{
+            width:250px;
+            height:100vh;
+            background:#1e293b;
+            color:white;
+            position:fixed;
+            padding:20px;
+        }
+
+        .sidebar h2{
+            text-align:center;
+            margin-bottom:30px;
+        }
+
+        .sidebar ul{
+            list-style:none;
+        }
+
+        .sidebar ul li{
+            margin:18px 0;
+        }
+
+        .sidebar ul li a{
+            color:white;
+            text-decoration:none;
+            font-size:17px;
+            display:block;
+            padding:12px;
+            border-radius:6px;
+            transition:0.3s;
+        }
+
+        .sidebar ul li a:hover{
+            background:#334155;
+        }
+
+
+        .main{
+            margin-left:250px;
+            width:100%;
+            padding:20px;
+        }
+
+        .topbar{
+            background:white;
+            padding:15px 20px;
+            border-radius:10px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            box-shadow:0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .topbar h1{
+            color:#1e293b;
+        }
+
+        .profile{
+            font-weight:bold;
+            color:#555;
+        }
+
+        .cards{
+            margin-top:30px;
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+            gap:20px;
+        }
+
+        .card{
+            background:white;
+            padding:25px;
+            border-radius:12px;
+            box-shadow:0 2px 5px rgba(0,0,0,0.1);
+            text-align:center;
+        }
+
+        .card h2{
+            font-size:35px;
+            color:#2563eb;
+            margin-bottom:10px;
+        }
+
+        .card p{
+            font-size:18px;
+            color:#555;
+        }
+
+
+        .table-container{
+            margin-top:40px;
+            background:white;
+            padding:20px;
+            border-radius:12px;
+            box-shadow:0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        table{
+            width:100%;
+            border-collapse:collapse;
+            margin-top:20px;
+        }
+
+        table th,
+        table td{
+            padding:12px;
+            border-bottom:1px solid #ddd;
+            text-align:left;
+        }
+
+        table th{
+            background:#2563eb;
+            color:white;
+        }
+
+        .btn{
+            padding:8px 12px;
+            border:none;
+            border-radius:5px;
+            text-decoration:none;
+            color:white;
+            cursor:pointer;
+        }
+
+        .download{
+            background:green;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+
+        <h2>User Panel</h2>
+
+        <ul>
+            <li><a href="/user_dashboard">Dashboard</a></li>
+            <li><a href="/view">View Materials</a></li>
+            <li><a href="/upload">Upload Material</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+
+    </div>
+
+
+    <div class="main">
+
+        <div class="topbar">
+            <h1>User Dashboard</h1>
+
+            <div class="profile">
+                Welcome User
+            </div>
+        </div>
+
+
+        <div class="cards">
+
+            <div class="card">
+                <h2>{{ users }}</h2>
+                <p>Total Users</p>
+            </div>
+
+            <div class="card">
+                <h2>{{ materials }}</h2>
+                <p>Total Materials</p>
+            </div>
+
+            <div class="card">
+                <h2>{{ downloads }}</h2>
+                <p>Total Downloads</p>
+            </div>
+
+        </div>
+
+
+        <div class="table-container">
+
+            <h2>Recent Uploaded Materials</h2>
+
+            <table>
+
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Course</th>
+                    <th>Semester</th>
+                </tr>
+
+                {% for material in recent_materials %}
+
+                <tr>
+
+                    <td>{{ material.id }}</td>
+                    <td>{{ material.name }}</td>
+                    <td>{{ material.course }}</td>
+                    <td>{{ material.semester }}</td>
+
+                    
+                </tr>
+
+                {% endfor %}
+
+            </table>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
