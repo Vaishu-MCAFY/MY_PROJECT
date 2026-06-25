@@ -1,0 +1,249 @@
+<html>
+<head>
+    <title>Admin Home</title>
+    <style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+}
+
+
+header{
+    width:100%;
+    background:#007BFF;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    text-decoration:underline;
+}
+
+.hero{
+    background:linear-gradient(to right,#007BFF,#00c6ff);
+    color:white;
+    text-align:center;
+    padding:80px 20px;
+}
+
+.hero h1{
+    font-size:45px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:20px;
+    margin-bottom:30px;
+}
+
+.hero .btn{
+    background:white;
+    color:#007BFF;
+    padding:12px 25px;
+    border-radius:5px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.hero .btn:hover{
+    background:#f0f0f0;
+}
+
+
+.dashboard{
+    width:90%;
+    margin:50px auto;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:40px;
+    font-size:35px;
+    color:#333;
+}
+
+.box-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.box{
+    background:white;
+    padding:35px;
+    border-radius:10px;
+    text-align:center;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.box:hover{
+    transform:translateY(-5px);
+}
+
+.box i{
+    font-size:45px;
+    color:#007BFF;
+    margin-bottom:20px;
+}
+
+.box h3{
+    font-size:30px;
+    color:#333;
+    margin-bottom:10px;
+}
+
+.box p{
+    color:#666;
+    margin-bottom:20px;
+}
+
+.box a{
+    display:inline-block;
+    padding:10px 20px;
+    background:#007BFF;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+}
+
+.box a:hover{
+    background:#0056b3;
+}
+
+
+footer{
+    margin-top:50px;
+    background:#007BFF;
+    color:white;
+    text-align:center;
+    padding:15px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<header>
+
+    <div class="logo">
+
+        Smart Study Admin
+
+    </div>
+
+    <nav>
+
+        <a href="/admin_home">Home</a>
+
+        <a href="/admin_login">Login</a>
+
+        <a href="/admin_logout">Logout</a>
+
+    </nav>
+
+</header>
+
+
+<section class="hero">
+
+    <h1>
+
+        Welcome Admin
+
+    </h1>
+
+    <p>
+
+        Manage users, study materials and platform activities.
+
+    </p>
+
+</section>
+<section class="dashboard">
+
+    <h2 class="title">
+
+        Admin Features
+
+    </h2>
+
+    <div class="box-container">
+        <div class="box">
+
+            <i class="fas fa-users"></i>
+
+            <h3>
+
+                Users
+
+            </h3>
+
+            <p>
+
+                Manage registered students and teachers.
+
+            </p>
+
+        </div>
+        <div class="box">
+
+            <i class="fas fa-book"></i>
+
+            <h3>
+
+                Materials
+
+            </h3>
+
+            <p>
+
+                View uploaded study materials.
+
+            </p>
+
+           
+
+        </div>
+
+    </div>
+
+</section>
+<footer>
+
+    <p>
+
+        © 2026 Smart Study Platform | Admin Panel
+
+    </p>
+
+</footer>
+
+</body>
+
+</html>
