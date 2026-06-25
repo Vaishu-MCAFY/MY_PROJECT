@@ -1,0 +1,195 @@
+<!-- templates/users.html -->
+
+<html>
+<head>
+    <title>Users Page</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+}
+
+/* HEADER */
+
+.header{
+    width:100%;
+    background:#007BFF;
+    padding:15px 50px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    color:white;
+    font-size:28px;
+    font-weight:bold;
+}
+
+.navbar a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-size:16px;
+}
+
+.navbar a:hover{
+    text-decoration:underline;
+}
+
+/* TITLE */
+
+.title{
+    text-align:center;
+    margin:40px 0;
+    font-size:35px;
+    color:#333;
+}
+
+/* USER BOXES */
+
+.user-container{
+    width:90%;
+    margin:auto;
+}
+
+.box-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(300px,1fr));
+    gap:25px;
+}
+
+.box{
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+.box p{
+    margin:15px 0;
+    font-size:17px;
+    color:#444;
+}
+
+.box span{
+    font-weight:bold;
+}
+
+.admin{
+    color:orange;
+}
+
+.user{
+    color:green;
+}
+
+/* DELETE BUTTON */
+
+.delete-btn{
+    display:inline-block;
+    margin-top:15px;
+    background:red;
+    color:white;
+    padding:10px 20px;
+    text-decoration:none;
+    border-radius:5px;
+}
+
+.delete-btn:hover{
+    background:darkred;
+}
+
+</style>
+
+<script>
+
+function confirmDelete(){
+
+    return confirm("Delete this user?");
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header class="header">
+
+    <div class="logo">
+
+        Smart Study Admin
+
+    </div>
+
+    <nav class="navbar">
+
+        <a href="/admin_dashboard">Dashboard</a>
+        <a href="/view">Materials</a>
+    </nav>
+
+</header>
+
+<!-- USERS -->
+
+<section class="user-container">
+
+    <h1 class="title">
+
+         Registered Users
+
+    </h1>
+
+    <div class="box-container">
+
+        {% for user in users %}
+
+        <div class="box">
+
+            <p>
+                User ID :
+                <span>{{ user.id }}</span>
+            </p>
+
+            <p>
+                Name :
+                <span>{{ user.name }}</span>
+            </p>
+
+            <p>
+                Email :
+                <span>{{ user.email }}</span>
+            </p>
+
+
+            <a href="/delete_user/{{ user.id }}"
+               class="delete-btn"
+               onclick="return confirmDelete()">
+
+                Delete
+
+            </a>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+</body>
+
+</html>
