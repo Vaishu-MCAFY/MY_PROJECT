@@ -1,0 +1,101 @@
+<html>
+<head>
+    <title>View Materials</title>
+
+<style>
+
+body{
+    font-family:Arial;
+    background:#f4f4f4;
+}
+
+.container{
+    width:90%;
+    margin:40px auto;
+}
+
+table{
+    width:100%;
+    background:white;
+    border-collapse:collapse;
+}
+
+table th{
+    background:#007BFF;
+    color:white;
+    padding:15px;
+}
+
+table td{
+    padding:15px;
+    border-bottom:1px solid #ddd;
+    text-align:center;
+}
+
+.download-btn{
+    background:green;
+    color:white;
+    padding:8px 15px;
+    text-decoration:none;
+    border-radius:5px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Uploaded Study Materials</h1>
+
+    <table>
+
+        <tr>
+
+            <th>Name</th>
+            <th>Course</th>
+            <th>Subject</th>
+            <th>Year</th>
+            <th>Semester</th>
+            <th>Download</th>
+
+        </tr>
+
+        {% for material in materials %}
+
+        <tr>
+
+            <td>{{ material.name}}</td>
+
+            <td>{{ material.course }}</td>
+
+            <td>{{ material.subject }}</td>
+            <td>{{ material.year }}</td>
+
+
+            <td>{{ material.semester }}</td>
+
+            <td>
+
+                <a href="/static/uploads/{{ material.file_name }}"
+                   class="download-btn"
+                   download>
+
+                    Download
+
+                </a>
+
+            </td>
+
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+</div>
+
+</body>
+</html>
