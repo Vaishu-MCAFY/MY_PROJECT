@@ -1,2 +1,2 @@
-# MY_PROJECT
-trust
+# Smart Study Material Sharing Platform
+
